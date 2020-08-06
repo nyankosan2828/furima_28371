@@ -38,6 +38,7 @@
 ### Association
 
 - has_one    :purchase
+- has_one    :shipment
 - belongs_to :user
 - belongs_to_active_hash :category
 - belongs_to_active_hash :status
@@ -67,9 +68,9 @@
 | street_number | string     | null: false                    |
 | building_name | string     |                                |
 | phone_number  | integer    | null: false                    |
-| purchase_id   | references | null: false, foreign_key: true |
+| item_id       | references | null: false, foreign_key: true |
 
 ### Association
 
-- belongs_to :purchase
+- belongs_to :item
 - belongs_to_active_hash :prefecture
