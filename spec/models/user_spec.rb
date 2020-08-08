@@ -4,10 +4,6 @@ RSpec.describe User, type: :model do
   describe '新規登録' do
     before do
       @user = FactoryBot.build(:user)
-      @user.first_name = 'テスト山田です'
-      @user.last_name = 'テスト太郎です'
-      @user.first_name_kana = 'テストヤマダデス'
-      @user.last_name_kana = 'テストタロウデス'
     end
 
     it '全ての値が正しく入力されていれば登録できること' do
