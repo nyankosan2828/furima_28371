@@ -5,6 +5,9 @@ class ItemsController < ApplicationController
 
   # 商品出品ページ
   def new
+    unless user_signed_in?
+      redirect_to new_user_session_path
+    end
   end
 
   # 商品出品時のデータ保存
