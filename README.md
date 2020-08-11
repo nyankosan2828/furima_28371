@@ -33,6 +33,7 @@
 | shipping_fee_id    | integer    | null: false                    |
 | shipping_origin_id | integer    | null: false                    |
 | shipping_date_id   | integer    | null: false                    |
+| purchase_status    | boolean    | null: false                    |
 | user               | references | null: false, foreign_key: true |
 
 ### Association
