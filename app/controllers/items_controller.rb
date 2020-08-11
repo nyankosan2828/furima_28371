@@ -22,6 +22,10 @@ class ItemsController < ApplicationController
     end
   end
 
+  # 商品詳細ページ
+  def show
+  end
+
   private
 
   def move_to_session
