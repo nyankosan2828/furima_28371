@@ -1,5 +1,6 @@
 class ItemsController < ApplicationController
   before_action :move_to_session, except: [:index, :show]
+  before_action :set_item, only: [:show]
 
   # トップページ
   def index
@@ -24,13 +25,17 @@ class ItemsController < ApplicationController
 
   # 商品詳細ページ
   def show
-    @item = Item.find(params[:id])
   end
 
   private
 
   def move_to_session
     redirect_to new_user_session_path unless user_signed_in?
+  end
+
+  # idに紐づく商品データの取得
+  def set_item
+    @item = Item.find(params[:id])
   end
 
   def item_params
