@@ -15,6 +15,7 @@ class ItemsController < ApplicationController
   def create
     @item = Item.new(item_params)
     if @item.save
+      @item.update(purchase_status: false)
       redirect_to root_path
     else
       render action: :new
