@@ -1,5 +1,5 @@
 class ItemsController < ApplicationController
-  before_action :move_to_session, except: [:index]
+  before_action :move_to_session, except: [:index, :show]
 
   # トップページ
   def index
@@ -24,6 +24,7 @@ class ItemsController < ApplicationController
 
   # 商品詳細ページ
   def show
+    @item = Item.find(params[:id])
   end
 
   private
