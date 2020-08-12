@@ -1,6 +1,6 @@
 class ItemsController < ApplicationController
   before_action :move_to_session, except: [:index, :show]
-  before_action :set_item, only: [:show]
+  before_action :set_item, only: [:show, :edit]
 
   # トップページ
   def index
@@ -25,6 +25,10 @@ class ItemsController < ApplicationController
 
   # 商品詳細ページ
   def show
+  end
+
+  # 商品編集ページ
+  def edit
   end
 
   private
