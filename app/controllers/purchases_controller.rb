@@ -15,7 +15,7 @@ class PurchasesController < ApplicationController
       pay_item(card_params)
       @purchase.save
       @item.update(purchase_status: true)
-      return redirect_to root_path
+      redirect_to root_path
     else
       render action: :index
     end
@@ -45,12 +45,11 @@ class PurchasesController < ApplicationController
   end
 
   def pay_item(card_params)
-    Payjp.api_key = ENV["PAYJP_SECRET_KEY"]
+    Payjp.api_key = ENV['PAYJP_SECRET_KEY']
     Payjp::Charge.create(
       amount: @item.price,
       card: card_params[:token],
-      currency:'jpy'
+      currency: 'jpy'
     )
   end
-
 end

@@ -54,7 +54,6 @@ RSpec.describe PurchaseShipment, type: :model do
     it 'phone_numberが12桁以上では保存できないこと' do
       @purchase_shipment.phone_number = '123456789012'
       @purchase_shipment.valid?
-      binding.pry
       expect(@purchase_shipment.errors.full_messages).to include('Phone number is too long (maximum is 11 characters)')
     end
   end
