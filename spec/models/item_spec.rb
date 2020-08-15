@@ -47,10 +47,10 @@ RSpec.describe Item, type: :model do
       expect(@item.errors.full_messages).to include('Shipping fee select')
     end
 
-    it 'shipping_origin_idが空では出品できないこと' do
-      @item.shipping_origin_id = nil
+    it 'prefecture_idが空では出品できないこと' do
+      @item.prefecture_id = nil
       @item.valid?
-      expect(@item.errors.full_messages).to include('Shipping origin select')
+      expect(@item.errors.full_messages).to include('Prefecture select')
     end
 
     it 'shipping_date_idが空では出品できないこと' do

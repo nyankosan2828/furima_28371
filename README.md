@@ -31,7 +31,7 @@
 | category_id        | integer    | null: false                    |
 | status_id          | integer    | null: false                    |
 | shipping_fee_id    | integer    | null: false                    |
-| shipping_origin_id | integer    | null: false                    |
+| prefecture_id      | integer    | null: false                    |
 | shipping_date_id   | integer    | null: false                    |
 | purchase_status    | boolean    | null: false                    |
 | user               | references | null: false, foreign_key: true |
@@ -44,7 +44,7 @@
 - belongs_to_active_hash :category
 - belongs_to_active_hash :status
 - belongs_to_active_hash :shipping_fee
-- belongs_to_active_hash :shipping_origin
+- belongs_to_active_hash :prefecture
 - belongs_to_active_hash :shipping_date
 
 ## purchases テーブル
@@ -68,7 +68,7 @@
 | city          | string     | null: false                    |
 | street_number | string     | null: false                    |
 | building_name | string     |                                |
-| phone_number  | integer    | null: false                    |
+| phone_number  | string     | null: false                    |
 | item          | references | null: false, foreign_key: true |
 
 ### Association
